@@ -9,14 +9,6 @@ const {
 } = require('../../models/userInfo')
 
 router.post('/add', async (ctx) => {
-  // name: Sequelize.STRING,
-  // endlessLv: Sequelize.STRING,
-  // playtime: Sequelize.TIME,
-  // password: Sequelize.STRING,
-  // saveData:Sequelize.STRING,
-  // standby1:Sequelize.STRING,
-  // standby2:Sequelize.STRING,
-  // standby3:Sequelize.STRING,
   try {
     var body = ctx.request.body
     const userInfo = {

@@ -20,5 +20,8 @@
     "mysql2": "^2.1.0",
     "require-directory": "^2.1.1",
     "sequelize": "^6.3.5"
+  },
+  "dependencies": {
+    "koa2-cors": "^2.0.6"
   }
 }
