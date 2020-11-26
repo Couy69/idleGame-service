@@ -22,6 +22,7 @@
     "sequelize": "^6.3.5"
   },
   "dependencies": {
+    "koa": "^2.13.0",
     "koa2-cors": "^2.0.6"
   }
 }

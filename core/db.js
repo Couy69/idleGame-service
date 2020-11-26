@@ -26,7 +26,7 @@ const sequelize = new Sequelize(dbName,username,password,{
 })
 
 sequelize.sync({
-  force:true  //每次运行是否删除现有表，然后新增
+  force:false  //每次运行是否删除现有表，然后新增
 })
 module.exports = {
   sequelize
