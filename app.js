@@ -10,8 +10,8 @@ app.use(catchError)
 app.use(
   cors({
       origin: function(ctx) {
-          return '*'; // 允许来自所有域名请求
-          // return 'http://localhost:8080'; //只允许http://localhost:8080这个域名的请求
+          // return '*'; // 允许来自所有域名请求
+          return 'http://couy.xyz'; //只允许http://localhost:8080这个域名的请求
       },
   })
 );
