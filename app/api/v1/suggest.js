@@ -14,7 +14,7 @@ router.post('/add', async (ctx) => {
     if(body.name.length>20||body.suggest.length>300){
       throw new global.errs.ParameterException('你输入的太长了，删一点？')
     }
-    if(body.name=''||body.suggest==''){
+    if(body.name==''||body.suggest==''){
       throw new global.errs.ParameterException('提交的时候请填写完整哦')
     }
     const suggest = {
