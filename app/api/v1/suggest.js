@@ -30,4 +30,49 @@ router.post('/add', async (ctx) => {
 
 })
 
+router.post('/get', async (ctx) => {
+  try {
+    var body = ctx.request.body
+    const r = await Suggest.findAndCountAll({
+      where: {
+        name: {
+          [Op.like]: '%' + body.name || '' + '%'
+        },
+      },
+      limit: parseInt(body.size || 10),
+      offset: parseInt((body.size * (body.page-1)) || 0)
+    })
+    throw new global.errs.Success('操作成功', r)
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+})
+
+router.post('/reply', async (ctx) => {
+  try {
+    var body = ctx.request.body
+    const r = await Suggest.findByPk(body.id);
+    r.standby1 = body.reply
+    await r.save()
+    throw new global.errs.Success('操作成功')
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+})
+
+router.post('/showOrHide', async (ctx) => {
+  try {
+    var body = ctx.request.body
+    const r = await Suggest.findByPk(body.id);
+    r.standby2 = body.showOrHide
+    await r.save()
+    throw new global.errs.Success('操作成功')
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+})
+
 module.exports = router
